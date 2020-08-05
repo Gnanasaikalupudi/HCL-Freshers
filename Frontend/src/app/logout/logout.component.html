@@ -1,0 +1,45 @@
+ <nav class="navbar navbar-dark bg-dark justify-content-between">
+    <h1 class="navbar-brand">Freshers</h1>
+    <button class="btn btn-success"  [routerLink]="['/login']">Logout</button>
+</nav>
+<br>
+<h1 style="text-align:center">Data Submitted Successfully......</h1>
+
+<div class="container" style="padding-top:20px;" style="text-align:center">  
+    <div class="row">  
+      <div class="col-md-10 mx-auto">  
+        <div class="card mx-10">  
+          <div class="card-body p-6">
+
+<table border=1 class="table table-bordered" style="text-align:center" id="excel-table">
+    <thead class="thead-dark">
+        <tr>
+        <th>SBU</th>
+        <th>Cluster</th>
+        <th>Account</th>
+        <th>Quarter</th>
+        <th>Location</th>
+        <th>Co hart</th>
+        <th>Skill</th>
+        <th>Month</th>
+        <th>Count</th>
+    </tr>
+    </thead>
+    <tr *ngFor="let data of datas" style="width: 300px;">
+        <td >{{data.sbu}}</td>
+        <td>{{data.cluster}}</td>
+        <td>{{data.account}}</td>
+        <td>{{data.quarter}}</td>
+        <td>{{data.location}}</td>
+        <td>{{data.cohart}}</td>
+        <td>{{data.skill}}</td>
+        <td>{{data.month}}</td>
+        <td>{{data.count}}</td>
+    </tr>
+</table>
+       <button  (click)="exportToExcel()" class="btn btn-success">Export To Excel</button>             
+</div>
+</div>
+</div> 
+</div> 
+</div>  

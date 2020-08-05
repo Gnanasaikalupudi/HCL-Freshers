@@ -1,0 +1,165 @@
+ <nav class="navbar navbar-dark bg-dark justify-content-between">
+    <h1 class="navbar-brand">Freshers</h1>
+    <button class="btn btn-success"  [routerLink]="['/login']">Logout</button>
+</nav>
+ 
+<div class="container" style="padding-top:50px;">  
+    <div class="row">  
+      <div class="col-md-6 mx-auto">  
+        <div class="card mx-4">  
+          <div class="card-body p-4"> 
+            <div [hidden]="submitted">  
+    
+                <form  name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" >
+                        <h1 style="text-align:center">Please fill the details</h1> 
+                    <div class="form-group" >
+                        <label for="sbu">SBU</label>
+                        <select id="sbu" class="form-control" id="sbu" [(ngModel)]="data.sbu" name="sbu" #sbu="ngModel" 
+                            [ngClass]="{ 'is-invalid': f.submitted && sbu.invalid }" required>
+                            <option value="APME">APME</option>
+                            <option value="EMEA">EMEA</option>
+                            <option value="NA BFS">NA BFS</option>
+                            <option value="NA INS">NA INS</option> 
+                        </select>
+                        <div *ngIf="f.submitted && sbu.invalid" class="invalid-feedback">
+                            <div *ngIf="sbu.errors.required">Please Select your SBU</div>
+                        </div>
+                    </div>
+
+                    <div class="form-group" >
+                        <label for="cluster">Cluster</label>
+                        <select id="cluster" class="form-control" id="cluster" [(ngModel)]="data.cluster" name="cluster" #cluster="ngModel" 
+                            [ngClass]="{ 'is-invalid': f.submitted && cluster.invalid }" required>
+                            <option value="ASEAN">ASEAN</option>
+                            <option value="CBA">CBA</option>
+                            <option value="CE">CE</option>
+                            <option value="UKIA">UKIA</option>
+                            <option value="NA CMS">NA CMS</option>
+                            <option value="NA BKG">NA BKG</option>
+                            <option value="NON USAA">NON USAA</option>
+                            <option value="USAA">USAA</option>
+                        </select>
+                        <div *ngIf="f.submitted && cluster.invalid" class="invalid-feedback">
+                            <div *ngIf="cluster.errors.required">Please Select your cluster</div>
+                        </div>
+                    </div>
+
+                <div class="form-group" >
+                    <label for="account">Account</label>
+                    <select id="account" class="form-control" id="account" [(ngModel)]="data.account" name="account" #account="ngModel" 
+                        [ngClass]="{ 'is-invalid': f.submitted && account.invalid }" required>
+                        <option value="DBS Bank Ltd.">DBS Bank Ltd.</option>
+                        <option value="Standard Charted Global Business">Standard Charted Global Business</option>
+                        <option value="ING">ING</option>
+                        <option value="BNP">BNP</option>
+                    </select>
+                    <div *ngIf="f.submitted && account.invalid" class="invalid-feedback">
+                        <div *ngIf="account.errors.required">Please Select your account</div>
+                    </div>
+                </div>
+
+                <div class="form-group" >
+                    <label for="quarter">Quarter</label>
+                    <select id="quarter" class="form-control" id="quarter" [(ngModel)]="data.quarter" name="quarter" #quarter="ngModel" 
+                        [ngClass]="{ 'is-invalid': f.submitted && account.invalid }" required>
+                        <option value="January-March">January-March</option>
+                        <option value="April-June">April-June</option>
+                        <option value="July-September">July-September</option>
+                        <option value="October-December">October-December</option>
+                    </select>
+                    <div *ngIf="f.submitted && account.invalid" class="invalid-feedback">
+                        <div *ngIf="account.errors.required">Please Select Quarter</div>
+                    </div>
+                </div>
+
+
+                <div class="form-group" >
+                    <label for="location">Location</label>
+                    <select id="location" class="form-control" id="location" [(ngModel)]="data.location" name="location" #location="ngModel" 
+                        [ngClass]="{ 'is-invalid': f.submitted && location.invalid }" required>
+                        <option value="Chennai">Chennai</option>
+                        <option value="Bangalore">Bangalore</option>
+                        <option value="Nagpur">Nagpur</option>
+                        <option value="Pune">Pune</option> 
+                        <option value="Noida">Noida</option>
+                        <option value="Madurai">Madurai</option> 
+                    </select>
+                    <div *ngIf="f.submitted && location.invalid" class="invalid-feedback">
+                        <div *ngIf="location.errors.required">Please Select your Location</div>
+                    </div>
+                </div>
+
+                <div class="form-group" >
+                    <label for="cohart">Co hart</label>
+                    <select id="cohart" class="form-control" id="cohart" [(ngModel)]="data.cohart" name="cohart" #cohart="ngModel" 
+                        [ngClass]="{ 'is-invalid': f.submitted && cohart.invalid }" required>
+                        <option value="Campus Fresher">Campus Fresher</option>
+                        <option value="Techbee">Techbee</option>
+                        <option value="TSS">TSS</option>
+                    </select>
+                    <div *ngIf="f.submitted && cohart.invalid" class="invalid-feedback">
+                        <div *ngIf="cohart.errors.required">Please Select your Cohart</div>
+                    </div>
+                </div>
+
+                <div class="form-group" >
+                    <label for="skill">Skill</label>
+                    <select id="skill" class="form-control" id="skill" [(ngModel)]="data.skill" name="skill" #skill="ngModel" 
+                        [ngClass]="{ 'is-invalid': f.submitted && skill.invalid }" required>
+                        <option value="Springboot">Springboot</option>
+                        <option value="SpringDataJPA">Spring Data JPA</option>
+                        <option value="Angular">Angular</option>
+                        <option value="RESTful API">RESTful API</option>
+                    </select>
+                    <div *ngIf="f.submitted && skill.invalid" class="invalid-feedback">
+                        <div *ngIf="skill.errors.required">Please Select your Skill</div>
+                    </div>
+                </div>
+
+                <div class="form-group" >
+                    <label for="month">Month</label>
+                    <select id="month" class="form-control" id="month" [(ngModel)]="data.month" name="month" #month="ngModel" 
+                        [ngClass]="{ 'is-invalid': f.submitted && month.invalid }" required>
+                        <option value="January">January</option>
+                        <option value="February">February</option>
+                        <option value="March">March</option>
+                        <option value="April">April</option>
+                        <option value="May">May</option>
+                        <option value="June">June</option>
+                        <option value="July">July</option>
+                        <option value="August">August</option>
+                        <option value="September">September</option>
+                        <option value="October">October</option>
+                        <option value="November">November</option>
+                        <option value="December">December</option>
+                    </select>
+                    <div *ngIf="f.submitted && month.invalid" class="invalid-feedback">
+                        <div *ngIf="month.errors.required">Please Select your Month</div>
+                    </div>
+                </div>
+
+                <div class="form-group" >
+                    <label for="count">Count</label>
+                    <input type="text" class="form-control" name="count" [(ngModel)]="data.count" #count="ngModel" 
+                    [ngClass]="{ 'is-invalid': f.submitted &&count.invalid }" required minlength="1" />
+                    <div *ngIf="f.submitted && count.invalid" class="invalid-feedback">
+                        <div *ngIf="count.errors.required">count is required</div>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-block btn-success">Submit</button> 
+
+            </form>
+        </div>
+                        <!-- <div [hidden]="!submitted" >
+                            <h1>Data submitted successfully</h1>
+                            <h4>SBU: {{data.sbu}}, Account: {{data.account}}, Quarter: {{data.quarter}}, Cluster: {{data.cluster}}, Location: {{data.location}},
+                            Co hart: {{data.cohart}}, Skill: {{data.skill}}, Month: {{data.month}}, Count: {{data.count}}</h4><br>
+                        </div>   -->
+
+                   
+                </div>
+            </div>
+        </div> 
+    </div> 
+</div>  
